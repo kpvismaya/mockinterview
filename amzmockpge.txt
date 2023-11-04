@@ -1,0 +1,49 @@
+package page_details;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class amazonpage {
+	 WebDriver driver;
+	 
+	 By search = By.id("twotabsearchtextbox");
+	 By button = By.id("nav-search-submit-button");
+	 By title = By.id("nav-logo-sprites");
+	 By mobiles= By.id("nav_cs_mobiles");
+	 By samsung= By.id("/html/body/div[1]/div[1]/div[2]/div[1]/div[1]/div/div/ul/li[3]/a");
+	 By addcart= By.id("add-to-cart-button");
+	 By cart = By.xpath("/html/body/div[1]/header/div/div[1]/div[3]/div/a[4]/div[1]/span[2]");
+	 
+
+public amazonpage(WebDriver driver) {
+		this.driver= driver;
+	}
+
+public void titleverification() {
+	driver= new ChromeDriver();
+	driver.navigate().to("nav-logo-sprites");
+	Assert.assertEquals("amazon", driver.getTitle());
+
+}
+ public void setvalues(String Mobile)
+ {
+	 driver.findElement(search).sendKeys(Mobile);
+ }
+ public void buttonclick()
+ {
+	 driver.findElement(button).click();
+ }
+ public void samsung()
+ {
+	 driver.findElement(samsung).click();
+ }
+ public void addcart()
+ {
+	 driver.findElement(addcart).click();
+ }
+ public void cart() {
+	 driver.findElement(cart).click();
+ }
+ }
